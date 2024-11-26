@@ -1,6 +1,6 @@
 # 3 Rs of Software Architecture
 
-![software architecture pyramid](./software-architecture-pyramid.png)
+![software architecture pyramid](/src/img/software-architecture-pyramid.png)
 
 ## Software Architecture
 
