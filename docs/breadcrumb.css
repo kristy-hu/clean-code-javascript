@@ -1,0 +1,30 @@
+nav.breadcrumb ol {
+	list-style: none;
+	padding: 0;
+	margin: 1.2em 0;
+	text-transform: capitalize;
+}
+
+ol.breadcrumb--small {
+	font-size: 1em;
+}
+
+ol.breadcrumb--smaller {
+	font-size: 1.15em;
+}
+
+ol.breadcrumb--normal {
+	font-size: 1.3em;
+}
+
+.breadcrumb li {
+	display: inline;
+}
+
+.breadcrumb a {
+	text-decoration: none;
+}
+
+.breadcrumb a:hover {
+	text-decoration: underline;
+}
