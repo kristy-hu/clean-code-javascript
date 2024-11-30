@@ -26,12 +26,12 @@
 
 ### 使用有意义并且可读的变量名称
 
-**不好的：**
+**不推荐：**
 ```javascript
 const yyyymmdstr = moment().format('YYYY/MM/DD');
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const currentDate = moment().format('YYYY/MM/DD');
 ```
@@ -39,14 +39,14 @@ const currentDate = moment().format('YYYY/MM/DD');
 
 ### 为相同类型的变量使用相同的词汇
 
-**不好的：**
+**不推荐：**
 ```javascript
 getUserInfo();
 getClientData();
 getCustomerRecord();
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 getUser();
 ```
@@ -59,14 +59,14 @@ getUser();
 [buddy.js](https://github.com/danielstjules/buddy.js) 和 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 的工具可以帮助我们找到未命名的常量。
 
-**不好的：**
+**不推荐：**
 ```javascript
 // 艹， 86400000 是什么鬼？
 setTimeout(blastOff, 86400000);
 
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 // 将它们声明为全局常量 `const` 。
 const MILLISECONDS_IN_A_DAY = 86400000;
@@ -77,14 +77,14 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
 
 ### 使用解释性的变量
-**不好的：**
+**不推荐：**
 ```javascript
 const address = 'One Infinite Loop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
 saveCityZipCode(address.match(cityZipCodeRegex)[1], address.match(cityZipCodeRegex)[2]);
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const address = 'One Infinite Loop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
@@ -96,7 +96,7 @@ saveCityZipCode(city, zipCode);
 ### 避免心理映射
 显示比隐式更好
 
-**不好的：**
+**不推荐：**
 ```javascript
 const locations = ['Austin', 'New York', 'San Francisco'];
 locations.forEach((l) => {
@@ -110,7 +110,7 @@ locations.forEach((l) => {
 });
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const locations = ['Austin', 'New York', 'San Francisco'];
 locations.forEach((location) => {
@@ -128,7 +128,7 @@ locations.forEach((location) => {
 
 如果你的类名/对象名有意义， 不要在变量名上再重复。
 
-**不好的：**
+**不推荐：**
 ```javascript
 const Car = {
   carMake: 'Honda',
@@ -141,7 +141,7 @@ function paintCar(car) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const Car = {
   make: 'Honda',
@@ -157,7 +157,7 @@ function paintCar(car) {
 
 ### 使用默认变量替代短路运算或条件
 
-**不好的：**
+**不推荐：**
 ```javascript
 function createMicrobrewery(name) {
   const breweryName = name || 'Hipster Brew Co.';
@@ -166,7 +166,7 @@ function createMicrobrewery(name) {
 
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
   // ...
@@ -189,14 +189,14 @@ function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
 由于 JavaScript 允许我们不定义类型/模板就可以创建对象， 当你发现你自己需要大量的参数时， 你
 可以使用一个对象。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function createMenu(title, body, buttonText, cancellable) {
   // ...
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const menuConfig = {
   title: 'Foo',
@@ -219,7 +219,7 @@ function createMenu(config) {
 当你能将一个函数隔离到只有一个动作， 他们将能够被容易的进行重构并且你的代码将会更容易阅读。 如
 果你严格遵守本指南中的这一条， 你将会领先于许多开发者。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function emailClients(clients) {
   clients.forEach((client) => {
@@ -231,7 +231,7 @@ function emailClients(clients) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function emailClients(clients) {
   clients
@@ -248,7 +248,7 @@ function isClientActive(client) {
 
 ### 函数名称应该说明它要做什么
 
-**不好的：**
+**不推荐：**
 ```javascript
 function addToDate(date, month) {
   // ...
@@ -260,7 +260,7 @@ const date = new Date();
 addToDate(date, 1);
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function addMonthToDate(month, date) {
   // ...
@@ -275,7 +275,7 @@ addMonthToDate(1, date);
 
 当在你的函数中有多于一个抽象级别时， 你的函数通常做了太多事情。 拆分函数将会提升重用性和测试性。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function parseBetterJSAlternative(code) {
   const REGEXES = [
@@ -301,7 +301,7 @@ function parseBetterJSAlternative(code) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function tokenize(code) {
   const REGEXES = [
@@ -355,7 +355,7 @@ function parseBetterJSAlternative(code) {
 余代码更差， 所以要谨慎行事。 既然已经这么说了， 如果你能够做出一个好的抽象， 才去做。 不要重复
 你自己， 否则你会发现当你要修改一个东西时时刻需要修改多个地方。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function showDeveloperList(developers) {
   developers.forEach((developer) => {
@@ -388,7 +388,7 @@ function showManagerList(managers) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function showList(employees) {
   employees.forEach((employee) => {
@@ -415,7 +415,7 @@ function showList(employees) {
 
 ### 使用 Object.assign 设置默认对象
 
-**不好的：**
+**不推荐：**
 ```javascript
 const menuConfig = {
   title: null,
@@ -434,7 +434,7 @@ function createMenu(config) {
 createMenu(menuConfig);
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const menuConfig = {
   title: 'Order',
@@ -465,7 +465,7 @@ createMenu(menuConfig);
 标记位是告诉你的用户这个函数做了不只一件事情。 函数应该只做一件事情。 如果你的函数因为一个布尔值
 出现不同的代码路径， 请拆分它们。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function createFile(name, temp) {
   if (temp) {
@@ -476,7 +476,7 @@ function createFile(name, temp) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function createFile(name) {
   fs.create(name);
@@ -500,7 +500,7 @@ function createTempFile(name) {
 重点是避免这些常见的易犯的错误， 比如在对象之间共享状态而不使用任何结构， 使用任何地方都可以写入
 的可变的数据类型， 没有集中化导致副作用。 如果你能做到这些， 那么你将会比其它的码农大军更加幸福。
 
-**不好的：**
+**不推荐：**
 ```javascript
 // Global variable referenced by following function.
 // 全局变量被下面的函数引用
@@ -518,7 +518,7 @@ splitIntoFirstAndLastName();
 console.log(name); // ['Ryan', 'McDermott'];
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function splitIntoFirstAndLastName(name) {
   return name.split(' ');
@@ -541,7 +541,7 @@ JavaScript 的 原生 `Array` ， 添加一个可以显示两个数组的不同�
 另外一个类库仅仅使用 `diff` 方法来查找数组的第一个元素和最后一个元素之间的不同之处呢？ 这就是
 为什么使用 ES2015/ES6 的类是一个更好的做法的原因， 只要简单的扩展全局的 `Array` 即可。
 
-**不好的：**
+**不推荐：**
 ```javascript
 Array.prototype.diff = function diff(comparisonArray) {
   const hash = new Set(comparisonArray);
@@ -549,7 +549,7 @@ Array.prototype.diff = function diff(comparisonArray) {
 };
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class SuperArray extends Array {
   diff(comparisonArray) {
@@ -565,7 +565,7 @@ class SuperArray extends Array {
 JavaScript 不是 Haskell 那种方式的函数式语言， 但是它有它的函数式风格。 函数式语言更加简洁
 并且更容易进行测试， 当你可以使用函数式编程风格时请尽情使用。
 
-**不好的：**
+**不推荐：**
 ```javascript
 const programmerOutput = [
   {
@@ -590,7 +590,7 @@ for (let i = 0; i < programmerOutput.length; i++) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const programmerOutput = [
   {
@@ -616,14 +616,14 @@ const totalOutput = programmerOutput
 
 ### 封装条件语句
 
-**不好的：**
+**不推荐：**
 ```javascript
 if (fsm.state === 'fetching' && isEmpty(listNode)) {
   // ...
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function shouldShowSpinner(fsm, listNode) {
   return fsm.state === 'fetching' && isEmpty(listNode);
@@ -637,7 +637,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 
 ### 避免负面条件
 
-**不好的：**
+**不推荐：**
 ```javascript
 function isDOMNodeNotPresent(node) {
   // ...
@@ -648,7 +648,7 @@ if (!isDOMNodeNotPresent(node)) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function isDOMNodePresent(node) {
   // ...
@@ -668,7 +668,7 @@ if (isDOMNodePresent(node)) {
 当你有使用 `if` 语句的类/函数是， 你在告诉你的用户你的函数做了不止一件事情。 记住： 只做一件
 事情。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class Airplane {
   // ...
@@ -685,7 +685,7 @@ class Airplane {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class Airplane {
   // ...
@@ -719,7 +719,7 @@ class Cessna extends Airplane {
 JavaScript 是无类型的， 这意味着你的函数能接受任何类型的参数。 但是有时又会被这种自由咬伤，
 于是又尝试在你的函数中做类型检查。 有很多种方式来避免这个， 第一个要考虑的是一致的 API 。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function travelToTexas(vehicle) {
   if (vehicle instanceof Bicycle) {
@@ -730,7 +730,7 @@ function travelToTexas(vehicle) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function travelToTexas(vehicle) {
   vehicle.move(this.currentLocation, new Location('texas'));
@@ -746,7 +746,7 @@ function travelToTexas(vehicle) {
 全而不缺失可读性。 保持你的 JavaScript 简洁， 编写良好的测试， 并有良好的代码审阅， 否则使用
 TypeScript （就像我说的， 它是一个伟大的替代品）来完成这些。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function combine(val1, val2) {
   if (typeof val1 === 'number' && typeof val2 === 'number' ||
@@ -758,7 +758,7 @@ function combine(val1, val2) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function combine(val1, val2) {
   return val1 + val2;
@@ -772,7 +772,7 @@ function combine(val1, val2) {
 资源](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)， 用来
 查看那些地方需要优化。 为这些而优化， 直到他们被修正。
 
-**不好的：**
+**不推荐：**
 ```javascript
 
 // On old browsers, each iteration with uncached `list.length` would be costly
@@ -784,7 +784,7 @@ for (let i = 0, len = list.length; i < len; i++) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 for (let i = 0; i < list.length; i++) {
   // ...
@@ -797,7 +797,7 @@ for (let i = 0; i < list.length; i++) {
 僵死代码和冗余代码同样糟糕。 没有理由在代码库中保存它。 如果它不会被调用， 就删掉它。 当你需要
 它时， 它依然保存在版本历史记录中。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function oldRequestModule(url) {
   // ...
@@ -812,7 +812,7 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function newRequestModule(url) {
   // ...
@@ -838,7 +838,7 @@ JavaScript 没有接口或类型， 所以坚持这个模式是非常困难的�
 * 继承这个类， 你可以重写默认功能；
 * 你可以延迟加载对象的属性， 比如说从服务器获取。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class BankAccount {
   constructor() {
@@ -852,7 +852,7 @@ const bankAccount = new BankAccount();
 bankAccount.balance -= 100;
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class BankAccount {
   constructor(balance = 1000) {
@@ -890,7 +890,7 @@ let balance = bankAccount.balance;
 ### 让对象拥有私有成员
 这个可以通过闭包来实现（针对 ES5 或更低）。
 
-**不好的：**
+**不推荐：**
 ```javascript
 
 const Employee = function(name) {
@@ -907,7 +907,7 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const Employee = function (name) {
   this.getName = function getName() {
@@ -931,7 +931,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 要）， 则优先用 ES2015/ES6的类。 不过， 短小的函数优先于类， 直到你发现你需要更大并且更复杂的
 对象。
 
-**不好的：**
+**不推荐：**
 ```javascript
 const Animal = function(age) {
   if (!(this instanceof Animal)) {
@@ -970,7 +970,7 @@ Human.prototype.constructor = Human;
 Human.prototype.speak = function speak() {};
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class Animal {
   constructor(age) {
@@ -1007,7 +1007,7 @@ class Human extends Mammal {
 会变得多么简洁。 在你的类／方法中， 简单的在每个方法的最后返回 `this` ， 然后你就能把这个类的
 其它方法链在一起。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class Car {
   constructor() {
@@ -1040,7 +1040,7 @@ car.setModel('F-150');
 car.save();
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class Car {
   constructor() {
@@ -1096,7 +1096,7 @@ const car = new Car()
 2. 你可以重用来自基类的代码（人可以像所有动物一样行动）；
 3. 你想通过基类对子类进行全局的修改（改变所有动物行动时的热量消耗）；
 
-**不好的：**
+**不推荐：**
 ```javascript
 class Employee {
   constructor(name, email) {
@@ -1119,7 +1119,7 @@ class EmployeeTaxData extends Employee {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class EmployeeTaxData {
   constructor(ssn, salary) {
@@ -1153,7 +1153,7 @@ class Employee {
 最小化需要修改一个类的次数时很重要的， 因为如果一个类拥有太多的功能， 一旦你修改它的一小部分，
 将会很难弄清楚会对代码库中的其它模块造成什么影响。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class UserSettings {
   constructor(user) {
@@ -1172,7 +1172,7 @@ class UserSettings {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class UserAuth {
   constructor(user) {
@@ -1205,7 +1205,7 @@ class UserSettings {
 Bertrand Meyer 说过， “软件实体 (类， 模块， 函数等) 应该为扩展开放， 但是为修改关闭。” 这
 是什么意思呢？ 这个原则基本上说明了你应该允许用户添加功能而不必修改现有的代码。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class AjaxAdapter extends Adapter {
   constructor() {
@@ -1248,7 +1248,7 @@ function makeHttpCall(url) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class AjaxAdapter extends Adapter {
   constructor() {
@@ -1296,7 +1296,7 @@ class HttpRequester {
 能还有有些疑惑， 让我们来看一下这个经典的正方形与矩形的例子。 从数学上说， 一个正方形是一个矩形，
 但是你用 "is-a" 的关系用继承来实现， 你将很快遇到麻烦。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class Rectangle {
   constructor() {
@@ -1350,7 +1350,7 @@ const rectangles = [new Rectangle(), new Rectangle(), new Square()];
 renderLargeRectangles(rectangles);
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class Shape {
   setColor(color) {
@@ -1409,7 +1409,7 @@ JavaScript 没有接口， 所以这个原则不像其它语言那么严格。 �
 量的选项是有益的， 因为多数情况下他们不需要全部的设置。 让它们变成可选的有助于防止出现一个“胖接
 口”。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class DOMTraverser {
   constructor(settings) {
@@ -1435,7 +1435,7 @@ const $ = new DOMTraverser({
 
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class DOMTraverser {
   constructor(settings) {
@@ -1485,7 +1485,7 @@ const $ = new DOMTraverser({
 属性直接暴露给另外一个对象/类。 在下面的例子中， 任何一个 Request 模块的隐式契约 `InventoryTracker`
 将有一个 `requestItems` 方法。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class InventoryRequester {
   constructor() {
@@ -1501,7 +1501,7 @@ class InventoryTracker {
   constructor(items) {
     this.items = items;
 
-    // 不好的： 我们已经创建了一个对请求的具体实现的依赖， 我们只有一个 requestItems 方法依
+    // 不推荐： 我们已经创建了一个对请求的具体实现的依赖， 我们只有一个 requestItems 方法依
     // 赖一个请求方法 'request'
     this.requester = new InventoryRequester();
   }
@@ -1517,7 +1517,7 @@ const inventoryTracker = new InventoryTracker(['apples', 'bananas']);
 inventoryTracker.requestItems();
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class InventoryTracker {
   constructor(items, requester) {
@@ -1572,7 +1572,7 @@ inventoryTracker.requestItems();
 
 ### 一个测试一个概念
 
-**不好的：**
+**不推荐：**
 ```javascript
 const assert = require('assert');
 
@@ -1595,7 +1595,7 @@ describe('MakeMomentJSGreatAgain', () => {
 });
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const assert = require('assert');
 
@@ -1628,7 +1628,7 @@ describe('MakeMomentJSGreatAgain', () => {
 回调不够简洁， 因为他们会产生过多的嵌套。 在 ES2015/ES6 中， Promises 已经是内置的全局类型
 了，使用它们吧！
 
-**不好的：**
+**不推荐：**
 ```javascript
 require('request').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin', (requestErr, response) => {
   if (requestErr) {
@@ -1646,7 +1646,7 @@ require('request').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin', (req
 
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
   .then((response) => {
@@ -1668,7 +1668,7 @@ Promises 是回调的一个非常简洁的替代品， 但是 ES2017/ES8 带来�
 更加简洁的解决方案。 你需要的只是一个前缀为 `async` 关键字的函数， 接下来就可以不需要 `then`
 函数链来编写逻辑了。 如果你能使用 ES2017/ES8 的高级功能的话， 今天就使用它吧！
 
-**不好的：**
+**不推荐：**
 ```javascript
 require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
   .then((response) => {
@@ -1683,7 +1683,7 @@ require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Marti
 
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 async function getCleanCodeArticle() {
   try {
@@ -1709,7 +1709,7 @@ async function getCleanCodeArticle() {
 也不怎么好， 因为往往会丢失在海量的控制台输出中。 如果你把任意一段代码用 `try/catch` 包装那就
 意味着你想到这里可能会错， 因此你应该有个修复计划， 或者当错误发生时有一个代码路径。
 
-**不好的：**
+**不推荐：**
 ```javascript
 try {
   functionThatMightThrow();
@@ -1718,7 +1718,7 @@ try {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 try {
   functionThatMightThrow();
@@ -1737,7 +1737,7 @@ try {
 
 与你不应忽略来自 `try/catch` 的错误的原因相同。
 
-**不好的：**
+**不推荐：**
 ```javascript
 getdata()
 .then((data) => {
@@ -1748,7 +1748,7 @@ getdata()
 });
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 getdata()
 .then((data) => {
@@ -1780,7 +1780,7 @@ getdata()
 JavaScript 是无类型的， 所以大小写告诉你关于你的变量、 函数等的很多事情。 这些规则是主观的，
 所以你的团队可以选择他们想要的。 重点是， 不管你们选择了什么， 要保持一致。
 
-**不好的：**
+**不推荐：**
 ```javascript
 const DAYS_IN_WEEK = 7;
 const daysInMonth = 30;
@@ -1795,7 +1795,7 @@ class animal {}
 class Alpaca {}
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 const DAYS_IN_WEEK = 7;
 const DAYS_IN_MONTH = 30;
@@ -1818,7 +1818,7 @@ class Alpaca {}
 调用函数的正上方。 我们倾向于从上到下阅读代码， 就像读一章报纸。 由于这个原因， 保持你的代码可
 以按照这种方式阅读。
 
-**不好的：**
+**不推荐：**
 ```javascript
 class PerformanceReview {
   constructor(employee) {
@@ -1857,7 +1857,7 @@ const review = new PerformanceReview(user);
 review.perfReview();
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 class PerformanceReview {
   constructor(employee) {
@@ -1904,7 +1904,7 @@ review.perfReview();
 
 注释是代码的辩解， 不是要求。 多数情况下， 好的代码就是文档。
 
-**不好的：**
+**不推荐：**
 ```javascript
 function hashIt(data) {
   // The hash
@@ -1925,7 +1925,7 @@ function hashIt(data) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 
 function hashIt(data) {
@@ -1948,7 +1948,7 @@ function hashIt(data) {
 
 因为有版本控制， 把旧的代码留在历史记录即可。
 
-**不好的：**
+**不推荐：**
 ```javascript
 doStuff();
 // doOtherStuff();
@@ -1956,7 +1956,7 @@ doStuff();
 // doSoMuchStuff();
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 doStuff();
 ```
@@ -1967,7 +1967,7 @@ doStuff();
 记住， 使用版本控制！ 不需要僵尸代码， 注释掉的代码， 尤其是日志式的注释。 使用 `git log` 来
 获取历史记录。
 
-**不好的：**
+**不推荐：**
 ```javascript
 /**
  * 2016-12-20: Removed monads, didn't understand them (RM)
@@ -1980,7 +1980,7 @@ function combine(a, b) {
 }
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 function combine(a, b) {
   return a + b;
@@ -1992,7 +1992,7 @@ function combine(a, b) {
 
 它们仅仅添加了干扰。 让函数和变量名称与合适的缩进和格式化为你的代码提供视觉结构。
 
-**不好的：**
+**不推荐：**
 ```javascript
 ////////////////////////////////////////////////////////////////////////////////
 // Scope Model Instantiation
@@ -2010,7 +2010,7 @@ const actions = function() {
 };
 ```
 
-**好的：**
+**推荐：**
 ```javascript
 $scope.model = {
   menu: 'foo',
