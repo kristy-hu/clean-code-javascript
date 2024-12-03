@@ -1,5 +1,5 @@
 # clean-code-javascript
-A compilation of the [original article](https://github.com/ryanmcdermott/clean-code-javascript) about _JavaScript best coding principles_ by [@ryanmcdermott](https://github.com/ryanmcdermott). 
+A compilation of the [original article](https://github.com/ryanmcdermott/clean-code-javascript) about _JavaScript best practice_ by [@ryanmcdermott](https://github.com/ryanmcdermott). 
 
 Thanks for the following transaltors for their efforts👍:
 
