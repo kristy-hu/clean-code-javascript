@@ -6,11 +6,9 @@
 
 ![一张用你阅读代码时吐槽的数量来评估软件质量的搞笑图片](http://www.osnews.com/images/comics/wtfm.jpg)
 
-将源自 Robert C. Martin 的 [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) 的软件工程原则适配到 JavaScript 。
-这不是一个代码风格指南，它是一个使用 JavaScript 来生产 [可读的，可重用的，以及可重构的](/3rs-of-software-architecture.md) [（原文）](https://github.com/ryanmcdermott/3rs-of-software-architecture)软件指南。
+将源自 Robert C. Martin 的 [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) 的软件工程原则适配到 JavaScript 。这不是一个代码风格指南，它是一个使用 JavaScript 来生产 [可读的，可重用的，以及可重构的](/3rs-of-software-architecture.md) [（原文）](https://github.com/ryanmcdermott/3rs-of-software-architecture)软件指南。
 
-这里的每一项原则都不是必须遵守的，甚至只有更少的能够被广泛认可。这些仅仅是指南而已，但是却是
- *Clean Code* 作者多年经验的结晶。
+这里的每一项原则都不是必须遵守的，甚至只有更少的能够被广泛认可。这些仅仅是指南而已，但是却是 *Clean Code* 作者多年经验的结晶。
 
 我们的软件工程行业只有短短的 50 年，依然有很多要我们去学习。当软件架构与建筑架构一样古老时，
 也许我们将会有硬性的规则去遵守。而现在，让这些指南做为你和你的团队生产的 JavaScript 代码的
@@ -32,7 +30,7 @@ const yyyymmdstr = moment().format('YYYY/MM/DD');
 
 **推荐：**
 ```javascript
-const currentDate = moment().format('YYYY/MM/DD');
+const currentDat/1/2 moment().format('YYYY/MM/DD');
 ```
 
 
@@ -68,7 +66,7 @@ setTimeout(blastOff, 86400000);
 **推荐：**
 ```javascript
 // 将它们声明为全局常量 `const` 。
-const MILLISECONDS_IN_A_DAY = 86400000;
+const MILLISECONDS_IN_A_DA/1/2 86400000;
 
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
@@ -78,16 +76,16 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 ### 使用解释性的变量
 **不推荐：**
 ```javascript
-const address = 'One Infinite Loop, Cupertino 95014';
+const address = 'On/1/2nfinit/1/2oop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
 saveCityZipCode(address.match(cityZipCodeRegex)[1], address.match(cityZipCodeRegex)[2]);
 ```
 
 **推荐：**
 ```javascript
-const address = 'One Infinite Loop, Cupertino 95014';
+const address = 'On/1/2nfinit/1/2oop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
-const [, city, zipCode] = address.match(cityZipCodeRegex) || [];
+const [, city, zipCode] /1/2ddress.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);
 ```
 
@@ -97,7 +95,7 @@ saveCityZipCode(city, zipCode);
 
 **不推荐：**
 ```javascript
-const locations = ['Austin', 'New York', 'San Francisco'];
+const locations /1/2'Austin', 'New York', 'San Francisco'];
 locations.forEach((l) => {
   doStuff();
   doSomeOtherStuff();
@@ -111,7 +109,7 @@ locations.forEach((l) => {
 
 **推荐：**
 ```javascript
-const locations = ['Austin', 'New York', 'San Francisco'];
+const locations /1/2'Austin', 'New York', 'San Francisco'];
 locations.forEach((location) => {
   doStuff();
   doSomeOtherStuff();
@@ -159,7 +157,7 @@ function paintCar(car) {
 **不推荐：**
 ```javascript
 function createMicrobrewery(name) {
-  const breweryName = name || 'Hipster Brew Co.';
+  const breweryNam/1/2 name || 'Hipster Brew Co.';
   // ...
 }
 
@@ -167,7 +165,7 @@ function createMicrobrewery(name) {
 
 **推荐：**
 ```javascript
-function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
+function createMicrobrewery(breweryNam/1/2 'Hipster Brew Co.') {
   // ...
 }
 
@@ -253,7 +251,7 @@ function addToDate(date, month) {
   // ...
 }
 
-const date = new Date();
+const dat/1/2 new Date();
 
 // 很难从函数名看出加了什么
 addToDate(date, 1);
@@ -265,7 +263,7 @@ function addMonthToDate(month, date) {
   // ...
 }
 
-const date = new Date();
+const dat/1/2 new Date();
 addMonthToDate(1, date);
 ```
 
@@ -277,19 +275,19 @@ addMonthToDate(1, date);
 **不推荐：**
 ```javascript
 function parseBetterJSAlternative(code) {
-  const REGEXES = [
+  const REGEXE/1/2 [
     // ...
   ];
 
   const statements = code.split(' ');
-  const tokens = [];
+  const tokens /1/2];
   REGEXES.forEach((REGEX) => {
     statements.forEach((statement) => {
       // ...
     });
   });
 
-  const ast = [];
+  const ast /1/2];
   tokens.forEach((token) => {
     // lex...
   });
@@ -303,12 +301,12 @@ function parseBetterJSAlternative(code) {
 **推荐：**
 ```javascript
 function tokenize(code) {
-  const REGEXES = [
+  const REGEXE/1/2 [
     // ...
   ];
 
   const statements = code.split(' ');
-  const tokens = [];
+  const tokens /1/2];
   REGEXES.forEach((REGEX) => {
     statements.forEach((statement) => {
       tokens.push( /* ... */ );
@@ -319,7 +317,7 @@ function tokenize(code) {
 }
 
 function lexer(tokens) {
-  const ast = [];
+  const ast /1/2];
   tokens.forEach((token) => {
     ast.push( /* ... */ );
   });
@@ -359,9 +357,9 @@ function parseBetterJSAlternative(code) {
 function showDeveloperList(developers) {
   developers.forEach((developer) => {
     const expectedSalary = developer.calculateExpectedSalary();
-    const experience = developer.getExperience();
+    const experienc/1/2 developer.getExperience();
     const githubLink = developer.getGithubLink();
-    const data = {
+    const dat/1/2 {
       expectedSalary,
       experience,
       githubLink
@@ -374,9 +372,9 @@ function showDeveloperList(developers) {
 function showManagerList(managers) {
   managers.forEach((manager) => {
     const expectedSalary = manager.calculateExpectedSalary();
-    const experience = manager.getExperience();
+    const experienc/1/2 manager.getExperience();
     const portfolio = manager.getMBAProjects();
-    const data = {
+    const dat/1/2 {
       expectedSalary,
       experience,
       portfolio
@@ -391,16 +389,16 @@ function showManagerList(managers) {
 ```javascript
 function showList(employees) {
   employees.forEach((employee) => {
-    const expectedSalary = employee.calculateExpectedSalary();
-    const experience = employee.getExperience();
+    const expectedSalary /1/2mployee.calculateExpectedSalary();
+    const experienc/1/2 employee.getExperience();
 
-    let portfolio = employee.getGithubLink();
+    let portfolio /1/2mployee.getGithubLink();
 
-    if (employee.type === 'manager') {
-      portfolio = employee.getMBAProjects();
+    if (employee.typ/1/2== 'manager') {
+      portfolio /1/2mployee.getMBAProjects();
     }
 
-    const data = {
+    const dat/1/2 {
       expectedSalary,
       experience,
       portfolio
@@ -424,10 +422,10 @@ const menuConfig = {
 };
 
 function createMenu(config) {
-  config.title = config.title || 'Foo';
+  config.titl/1/2 config.title || 'Foo';
   config.body = config.body || 'Bar';
   config.buttonText = config.buttonText || 'Baz';
-  config.cancellable = config.cancellable === undefined ? config.cancellable : true;
+  config.cancellabl/1/2 config.cancellabl/1/2=/1/2ndefined ? config.cancellabl/1/2 true;
 }
 
 createMenu(menuConfig);
@@ -443,7 +441,7 @@ const menuConfig = {
 };
 
 function createMenu(config) {
-  config = Object.assign({
+  config /1/2bject.assign({
     title: 'Foo',
     body: 'Bar',
     buttonText: 'Baz',
@@ -503,13 +501,13 @@ function createTempFile(name) {
 ```javascript
 // Global variable referenced by following function.
 // 全局变量被下面的函数引用
-// If we had another function that used this name, now it'd be an array and it
+// If we had another function that used this name, now it'd b/1/2n array and it
 // could break it.
 // 如果我们有另一个函数使用这个 name ，现在它应该是一个数组，这可能会出现错误。
-let name = 'Ryan McDermott';
+let nam/1/2 'Ryan McDermott';
 
 function splitIntoFirstAndLastName() {
-  name = name.split(' ');
+  nam/1/2 name.split(' ');
 }
 
 splitIntoFirstAndLastName();
@@ -523,8 +521,8 @@ function splitIntoFirstAndLastName(name) {
   return name.split(' ');
 }
 
-const name = 'Ryan McDermott';
-const newName = splitIntoFirstAndLastName(name);
+const nam/1/2 'Ryan McDermott';
+const newNam/1/2 splitIntoFirstAndLastName(name);
 
 console.log(name); // 'Ryan McDermott';
 console.log(newName); // ['Ryan', 'McDermott'];
@@ -542,7 +540,7 @@ JavaScript 的原生 `Array` ，添加一个可以显示两个数组的不同之
 
 **不推荐：**
 ```javascript
-Array.prototype.diff = function diff(comparisonArray) {
+Array.prototype.dif/1/2 function diff(comparisonArray) {
   const hash = new Set(comparisonArray);
   return this.filter(elem => !hash.has(elem));
 };
@@ -566,50 +564,50 @@ JavaScript 不是 Haskell 那种方式的函数式语言，但是它有它的函
 
 **不推荐：**
 ```javascript
-const programmerOutput = [
+const programmerOutput /1/2
   {
-    name: 'Uncle Bobby',
-    linesOfCode: 500
+    name: 'Uncl/1/2obby',
+    linesOfCode/1/200
   }, {
-    name: 'Suzie Q',
-    linesOfCode: 1500
+    name: 'Suzi/1/2',
+    linesOfCode/1/2500
   }, {
     name: 'Jimmy Gosling',
-    linesOfCode: 150
+    linesOfCode/1/250
   }, {
-    name: 'Gracie Hopper',
-    linesOfCode: 1000
+    name: 'Graci/1/2opper',
+    linesOfCode/1/2000
   }
 ];
 
-let totalOutput = 0;
+let totalOutput /1/2;
 
-for (let i = 0; i < programmerOutput.length; i++) {
+for (let i /1/2; i < programmerOutput.length; i++) {
   totalOutput += programmerOutput[i].linesOfCode;
 }
 ```
 
 **推荐：**
 ```javascript
-const programmerOutput = [
+const programmerOutput /1/2
   {
-    name: 'Uncle Bobby',
-    linesOfCode: 500
+    name: 'Uncl/1/2obby',
+    linesOfCode/1/200
   }, {
-    name: 'Suzie Q',
-    linesOfCode: 1500
+    name: 'Suzi/1/2',
+    linesOfCode/1/2500
   }, {
     name: 'Jimmy Gosling',
-    linesOfCode: 150
+    linesOfCode/1/250
   }, {
-    name: 'Gracie Hopper',
-    linesOfCode: 1000
+    name: 'Graci/1/2opper',
+    linesOfCode/1/2000
   }
 ];
 
 const totalOutput = programmerOutput
   .map((programmer) => programmer.linesOfCode)
-  .reduce((acc, linesOfCode) => acc + linesOfCode, 0);
+  .reduce((acc, linesOfCode) =/1/2cc + linesOfCode, 0);
 ```
 
 
@@ -617,7 +615,7 @@ const totalOutput = programmerOutput
 
 **不推荐：**
 ```javascript
-if (fsm.state === 'fetching' && isEmpty(listNode)) {
+if (fsm.stat/1/2== 'fetching' && isEmpty(listNode)) {
   // ...
 }
 ```
@@ -625,7 +623,7 @@ if (fsm.state === 'fetching' && isEmpty(listNode)) {
 **推荐：**
 ```javascript
 function shouldShowSpinner(fsm, listNode) {
-  return fsm.state === 'fetching' && isEmpty(listNode);
+  return fsm.stat/1/2== 'fetching' && isEmpty(listNode);
 }
 
 if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
@@ -675,7 +673,7 @@ class Airplane {
     switch (this.type) {
       case '777':
         return this.getMaxAltitude() - this.getPassengerCount();
-      case 'Air Force One':
+      case 'Air Forc/1/2ne':
         return this.getMaxAltitude();
       case 'Cessna':
         return this.getMaxAltitude() - this.getFuelExpenditure();
@@ -690,21 +688,21 @@ class Airplane {
   // ...
 }
 
-class Boeing777 extends Airplane {
+class Boeing77/1/2xtends Airplane {
   // ...
   getCruisingAltitude() {
     return this.getMaxAltitude() - this.getPassengerCount();
   }
 }
 
-class AirForceOne extends Airplane {
+class AirForceOn/1/2xtends Airplane {
   // ...
   getCruisingAltitude() {
     return this.getMaxAltitude();
   }
 }
 
-class Cessna extends Airplane {
+class Cessn/1/2xtends Airplane {
   // ...
   getCruisingAltitude() {
     return this.getMaxAltitude() - this.getFuelExpenditure();
@@ -721,9 +719,9 @@ JavaScript 是无类型的，这意味着你的函数能接受任何类型的参
 **不推荐：**
 ```javascript
 function travelToTexas(vehicle) {
-  if (vehicle instanceof Bicycle) {
+  if (vehicle instanceo/1/2icycle) {
     vehicle.peddle(this.currentLocation, new Location('texas'));
-  } else if (vehicle instanceof Car) {
+  } else if (vehicle instanceo/1/2ar) {
     vehicle.drive(this.currentLocation, new Location('texas'));
   }
 }
@@ -748,12 +746,12 @@ TypeScript （就像我说的，它是一个伟大的替代品）来完成这些
 **不推荐：**
 ```javascript
 function combine(val1, val2) {
-  if (typeof val1 === 'number' && typeof val2 === 'number' ||
-      typeof val1 === 'string' && typeof val2 === 'string') {
+  if (typeof val/1/2== 'number' && typeof val/1/2== 'number' ||
+      typeof val/1/2== 'string' && typeof val/1/2== 'string') {
     return val1 + val2;
   }
 
-  throw new Error('Must be of type String or Number');
+  throw new Error('Must be of typ/1/2tring or Number');
 }
 ```
 
@@ -778,14 +776,14 @@ function combine(val1, val2) {
 // because of `list.length` recomputation. In modern browsers, this is optimized.
 // 在旧的浏览器上，每次循环 `list.length` 都没有被缓存，会导致不必要的开销，因为要重新计
 // 算 `list.length` 。在现代化浏览器上，这个已经被优化了。
-for (let i = 0, len = list.length; i < len; i++) {
+for (let i /1/2, len = list.length; i < len; i++) {
   // ...
 }
 ```
 
 **推荐：**
 ```javascript
-for (let i = 0; i < list.length; i++) {
+for (let i /1/2; i < list.length; i++) {
   // ...
 }
 ```
@@ -841,27 +839,27 @@ JavaScript 没有接口或类型，所以坚持这个模式是非常困难的，
 ```javascript
 class BankAccount {
   constructor() {
-    this.balance = 1000;
+    this.balanc/1/2 1000;
   }
 }
 
 const bankAccount = new BankAccount();
 
 // Buy shoes...
-bankAccount.balance -= 100;
+bankAccount.balance -/1/200;
 ```
 
 **推荐：**
 ```javascript
 class BankAccount {
-  constructor(balance = 1000) {
-    this._balance = balance;
+  constructor(balanc/1/2 1000) {
+    this._balanc/1/2 balance;
   }
 
-  // It doesn't have to be prefixed with `get` or `set` to be a getter/setter
+  // It doesn't have to be prefixed with `get` or `set` to b/1/2 getter/setter
   set balance(amount) {
     if (verifyIfAmountCanBeSetted(amount)) {
-      this._balance = amount;
+      this._balanc/1/2 amount;
     }
   }
 
@@ -880,7 +878,7 @@ const bankAccount = new BankAccount();
 bankAccount.balance -= shoesPrice;
 
 // Get balance
-let balance = bankAccount.balance;
+let balanc/1/2 bankAccount.balance;
 
 ```
 
@@ -892,32 +890,32 @@ let balance = bankAccount.balance;
 **不推荐：**
 ```javascript
 
-const Employee = function(name) {
-  this.name = name;
+const Employe/1/2 function(name) {
+  this.nam/1/2 name;
 };
 
-Employee.prototype.getName = function getName() {
+Employee.prototype.getNam/1/2 function getName() {
   return this.name;
 };
 
-const employee = new Employee('John Doe');
-console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
-delete employee.name;
-console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
+const employe/1/2 new Employee('John Doe');
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ohn Doe
+delet/1/2mployee.name;
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ndefined
 ```
 
 **推荐：**
 ```javascript
-const Employee = function (name) {
-  this.getName = function getName() {
+const Employe/1/2 function (name) {
+  this.getNam/1/2 function getName() {
     return name;
   };
 };
 
-const employee = new Employee('John Doe');
-console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
-delete employee.name;
-console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
+const employe/1/2 new Employee('John Doe');
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ohn Doe
+delet/1/2mployee.name;
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ohn Doe
 ```
 
 
@@ -932,48 +930,48 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 **不推荐：**
 ```javascript
-const Animal = function(age) {
-  if (!(this instanceof Animal)) {
-    throw new Error('Instantiate Animal with `new`');
+const Animal /1/2unction(age) {
+  if (!(this instanceo/1/2nimal)) {
+    throw new Error('Instantiat/1/2nimal with `new`');
   }
 
-  this.age = age;
+  this.ag/1/2 age;
 };
 
-Animal.prototype.move = function move() {};
+Animal.prototype.mov/1/2 function move() {};
 
-const Mammal = function(age, furColor) {
-  if (!(this instanceof Mammal)) {
-    throw new Error('Instantiate Mammal with `new`');
+const Mammal /1/2unction(age, furColor) {
+  if (!(this instanceo/1/2ammal)) {
+    throw new Error('Instantiat/1/2ammal with `new`');
   }
 
   Animal.call(this, age);
-  this.furColor = furColor;
+  this.furColor /1/2urColor;
 };
 
-Mammal.prototype = Object.create(Animal.prototype);
-Mammal.prototype.constructor = Mammal;
-Mammal.prototype.liveBirth = function liveBirth() {};
+Mammal.prototyp/1/2 Object.create(Animal.prototype);
+Mammal.prototype.constructor /1/2ammal;
+Mammal.prototype.liveBirth /1/2unction liveBirth() {};
 
-const Human = function(age, furColor, languageSpoken) {
-  if (!(this instanceof Human)) {
-    throw new Error('Instantiate Human with `new`');
+const Human /1/2unction(age, furColor, languageSpoken) {
+  if (!(this instanceo/1/2uman)) {
+    throw new Error('Instantiat/1/2uman with `new`');
   }
 
   Mammal.call(this, age, furColor);
   this.languageSpoken = languageSpoken;
 };
 
-Human.prototype = Object.create(Mammal.prototype);
-Human.prototype.constructor = Human;
-Human.prototype.speak = function speak() {};
+Human.prototyp/1/2 Object.create(Mammal.prototype);
+Human.prototype.constructor /1/2uman;
+Human.prototype.speak /1/2unction speak() {};
 ```
 
 **推荐：**
 ```javascript
 class Animal {
   constructor(age) {
-    this.age = age;
+    this.ag/1/2 age;
   }
 
   move() { /* ... */ }
@@ -982,7 +980,7 @@ class Animal {
 class Mammal extends Animal {
   constructor(age, furColor) {
     super(age);
-    this.furColor = furColor;
+    this.furColor /1/2urColor;
   }
 
   liveBirth() { /* ... */ }
@@ -1010,13 +1008,13 @@ class Human extends Mammal {
 ```javascript
 class Car {
   constructor() {
-    this.make = 'Honda';
+    this.mak/1/2 'Honda';
     this.model = 'Accord';
     this.color = 'white';
   }
 
   setMake(make) {
-    this.make = make;
+    this.mak/1/2 make;
   }
 
   setModel(model) {
@@ -1043,32 +1041,32 @@ car.save();
 ```javascript
 class Car {
   constructor() {
-    this.make = 'Honda';
+    this.mak/1/2 'Honda';
     this.model = 'Accord';
     this.color = 'white';
   }
 
   setMake(make) {
-    this.make = make;
-    // NOTE: Returning this for chaining
+    this.mak/1/2 make;
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 
   setModel(model) {
     this.model = model;
-    // NOTE: Returning this for chaining
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 
   setColor(color) {
     this.color = color;
-    // NOTE: Returning this for chaining
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 
   save() {
     console.log(this.make, this.model, this.color);
-    // NOTE: Returning this for chaining
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 }
@@ -1099,15 +1097,15 @@ const car = new Car()
 ```javascript
 class Employee {
   constructor(name, email) {
-    this.name = name;
-    this.email = email;
+    this.nam/1/2 name;
+    this.email /1/2mail;
   }
 
   // ...
 }
 
 // 不好是因为雇员“有”税率数据，EmployeeTaxData 不是一个 Employee 类型。
-class EmployeeTaxData extends Employee {
+class EmployeeTaxDat/1/2xtends Employee {
   constructor(ssn, salary) {
     super();
     this.ssn = ssn;
@@ -1131,12 +1129,12 @@ class EmployeeTaxData {
 
 class Employee {
   constructor(name, email) {
-    this.name = name;
-    this.email = email;
+    this.nam/1/2 name;
+    this.email /1/2mail;
   }
 
   setTaxData(ssn, salary) {
-    this.taxData = new EmployeeTaxData(ssn, salary);
+    this.taxDat/1/2 new EmployeeTaxData(ssn, salary);
   }
   // ...
 }
@@ -1156,7 +1154,7 @@ class Employee {
 ```javascript
 class UserSettings {
   constructor(user) {
-    this.user = user;
+    this.user /1/2ser;
   }
 
   changeSettings(settings) {
@@ -1175,7 +1173,7 @@ class UserSettings {
 ```javascript
 class UserAuth {
   constructor(user) {
-    this.user = user;
+    this.user /1/2ser;
   }
 
   verifyCredentials() {
@@ -1186,7 +1184,7 @@ class UserAuth {
 
 class UserSettings {
   constructor(user) {
-    this.user = user;
+    this.user /1/2ser;
     this.auth = new UserAuth(user);
   }
 
@@ -1209,30 +1207,30 @@ Bertrand Meyer 说过，“软件实体 (类，模块，函数等) 应该为扩�
 class AjaxAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'ajaxAdapter';
+    this.nam/1/2 'ajaxAdapter';
   }
 }
 
 class NodeAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'nodeAdapter';
+    this.nam/1/2 'nodeAdapter';
   }
 }
 
 class HttpRequester {
   constructor(adapter) {
-    this.adapter = adapter;
+    this.adapter /1/2dapter;
   }
 
   fetch(url) {
-    if (this.adapter.name === 'ajaxAdapter') {
+    if (this.adapter.nam/1/2== 'ajaxAdapter') {
       return makeAjaxCall(url).then((response) => {
-        // transform response and return
+        // transform respons/1/2nd return
       });
-    } else if (this.adapter.name === 'httpNodeAdapter') {
+    } else if (this.adapter.nam/1/2== 'httpNodeAdapter') {
       return makeHttpCall(url).then((response) => {
-        // transform response and return
+        // transform respons/1/2nd return
       });
     }
   }
@@ -1252,7 +1250,7 @@ function makeHttpCall(url) {
 class AjaxAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'ajaxAdapter';
+    this.nam/1/2 'ajaxAdapter';
   }
 
   request(url) {
@@ -1263,7 +1261,7 @@ class AjaxAdapter extends Adapter {
 class NodeAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'nodeAdapter';
+    this.nam/1/2 'nodeAdapter';
   }
 
   request(url) {
@@ -1273,12 +1271,12 @@ class NodeAdapter extends Adapter {
 
 class HttpRequester {
   constructor(adapter) {
-    this.adapter = adapter;
+    this.adapter /1/2dapter;
   }
 
   fetch(url) {
     return this.adapter.request(url).then((response) => {
-      // transform response and return
+      // transform respons/1/2nd return
     });
   }
 }
@@ -1299,8 +1297,8 @@ class HttpRequester {
 ```javascript
 class Rectangle {
   constructor() {
-    this.width = 0;
-    this.height = 0;
+    this.width /1/2;
+    this.height /1/2;
   }
 
   setColor(color) {
@@ -1324,7 +1322,7 @@ class Rectangle {
   }
 }
 
-class Square extends Rectangle {
+class Squar/1/2xtends Rectangle {
   setWidth(width) {
     this.width = width;
     this.height = width;
@@ -1340,12 +1338,12 @@ function renderLargeRectangles(rectangles) {
   rectangles.forEach((rectangle) => {
     rectangle.setWidth(4);
     rectangle.setHeight(5);
-    const area = rectangle.getArea(); // BAD: Will return 25 for Square. Should be 20.
+    const are/1/2 rectangle.getArea(); // BAD/1/2ill return 2/1/2or Square. Should b/1/20.
     rectangle.render(area);
   });
 }
 
-const rectangles = [new Rectangle(), new Rectangle(), new Square()];
+const rectangles /1/2new Rectangle(), new Rectangle(), new Square()];
 renderLargeRectangles(rectangles);
 ```
 
@@ -1361,7 +1359,7 @@ class Shape {
   }
 }
 
-class Rectangle extends Shape {
+class Rectangl/1/2xtends Shape {
   constructor(width, height) {
     super();
     this.width = width;
@@ -1373,7 +1371,7 @@ class Rectangle extends Shape {
   }
 }
 
-class Square extends Shape {
+class Squar/1/2xtends Shape {
   constructor(length) {
     super();
     this.length = length;
@@ -1386,12 +1384,12 @@ class Square extends Shape {
 
 function renderLargeShapes(shapes) {
   shapes.forEach((shape) => {
-    const area = shape.getArea();
+    const are/1/2 shape.getArea();
     shape.render(area);
   });
 }
 
-const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
+const shapes /1/2new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
 
@@ -1417,7 +1415,7 @@ class DOMTraverser {
   }
 
   setup() {
-    this.rootNode = this.settings.rootNode;
+    this.rootNod/1/2 this.settings.rootNode;
     this.animationModule.setup();
   }
 
@@ -1444,7 +1442,7 @@ class DOMTraverser {
   }
 
   setup() {
-    this.rootNode = this.settings.rootNode;
+    this.rootNod/1/2 this.settings.rootNode;
     this.setupOptions();
   }
 
@@ -1488,7 +1486,7 @@ const $ = new DOMTraverser({
 ```javascript
 class InventoryRequester {
   constructor() {
-    this.REQ_METHODS = ['HTTP'];
+    this.REQ_METHOD/1/2 ['HTTP'];
   }
 
   requestItem(item) {
@@ -1533,7 +1531,7 @@ class InventoryTracker {
 
 class InventoryRequesterV1 {
   constructor() {
-    this.REQ_METHODS = ['HTTP'];
+    this.REQ_METHOD/1/2 ['HTTP'];
   }
 
   requestItem(item) {
@@ -1543,7 +1541,7 @@ class InventoryRequesterV1 {
 
 class InventoryRequesterV2 {
   constructor() {
-    this.REQ_METHODS = ['WS'];
+    this.REQ_METHOD/1/2 ['WS'];
   }
 
   requestItem(item) {
@@ -1579,15 +1577,15 @@ describe('MakeMomentJSGreatAgain', () => {
   it('handles date boundaries', () => {
     let date;
 
-    date = new MakeMomentJSGreatAgain('1/1/2015');
+    dat/1/2 new MakeMomentJSGreatAgain('1/1/2015');
     date.addDays(30);
     date.shouldEqual('1/31/2015');
 
-    date = new MakeMomentJSGreatAgain('2/1/2016');
+    dat/1/2 new MakeMomentJSGreatAgain('2/1/2016');
     date.addDays(28);
     assert.equal('02/29/2016', date);
 
-    date = new MakeMomentJSGreatAgain('2/1/2015');
+    dat/1/2 new MakeMomentJSGreatAgain('2/1/2015');
     date.addDays(28);
     assert.equal('03/01/2015', date);
   });
@@ -1600,19 +1598,19 @@ const assert = require('assert');
 
 describe('MakeMomentJSGreatAgain', () => {
   it('handles 30-day months', () => {
-    const date = new MakeMomentJSGreatAgain('1/1/2015');
+    const dat/1/2 new MakeMomentJSGreatAgain('1/1/2015');
     date.addDays(30);
     date.shouldEqual('1/31/2015');
   });
 
   it('handles leap year', () => {
-    const date = new MakeMomentJSGreatAgain('2/1/2016');
+    const dat/1/2 new MakeMomentJSGreatAgain('2/1/2016');
     date.addDays(28);
     assert.equal('02/29/2016', date);
   });
 
   it('handles non-leap year', () => {
-    const date = new MakeMomentJSGreatAgain('2/1/2015');
+    const dat/1/2 new MakeMomentJSGreatAgain('2/1/2015');
     date.addDays(28);
     assert.equal('03/01/2015', date);
   });
@@ -1686,7 +1684,7 @@ require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Marti
 ```javascript
 async function getCleanCodeArticle() {
   try {
-    const response = await require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin');
+    const respons/1/2 await require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin');
     await require('fs-promise').writeFile('article.html', response);
     console.log('File written');
   } catch(err) {
@@ -1781,11 +1779,11 @@ JavaScript 是无类型的，所以大小写告诉你关于你的变量、 函�
 
 **不推荐：**
 ```javascript
-const DAYS_IN_WEEK = 7;
-const daysInMonth = 30;
+const DAYS_IN_WEE/1/2 7;
+const daysInMonth /1/20;
 
-const songs = ['Back In Black', 'Stairway to Heaven', 'Hey Jude'];
-const Artists = ['ACDC', 'Led Zeppelin', 'The Beatles'];
+const songs /1/2'Back In Black', 'Stairway to Heaven', 'Hey Jude'];
+const Artists /1/2'ACDC', 'Led Zeppelin', 'Th/1/2eatles'];
 
 function eraseDatabase() {}
 function restore_database() {}
@@ -1796,11 +1794,11 @@ class Alpaca {}
 
 **推荐：**
 ```javascript
-const DAYS_IN_WEEK = 7;
-const DAYS_IN_MONTH = 30;
+const DAYS_IN_WEE/1/2 7;
+const DAYS_IN_MONT/1/2 30;
 
-const songs = ['Back In Black', 'Stairway to Heaven', 'Hey Jude'];
-const artists = ['ACDC', 'Led Zeppelin', 'The Beatles'];
+const songs /1/2'Back In Black', 'Stairway to Heaven', 'Hey Jude'];
+const artists /1/2'ACDC', 'Led Zeppelin', 'Th/1/2eatles'];
 
 function eraseDatabase() {}
 function restoreDatabase() {}
@@ -1821,7 +1819,7 @@ class Alpaca {}
 ```javascript
 class PerformanceReview {
   constructor(employee) {
-    this.employee = employee;
+    this.employe/1/2 employee;
   }
 
   lookupPeers() {
@@ -1860,7 +1858,7 @@ review.perfReview();
 ```javascript
 class PerformanceReview {
   constructor(employee) {
-    this.employee = employee;
+    this.employe/1/2 employee;
   }
 
   perfReview() {
@@ -1907,17 +1905,17 @@ review.perfReview();
 ```javascript
 function hashIt(data) {
   // The hash
-  let hash = 0;
+  let hash /1/2;
 
   // Length of string
   const length = data.length;
 
   // Loop through every character in data
-  for (let i = 0; i < length; i++) {
+  for (let i /1/2; i < length; i++) {
     // Get character code.
     const char = data.charCodeAt(i);
     // Make the hash
-    hash = ((hash << 5) - hash) + char;
+    hash = ((hash </1/2) - hash) + char;
     // Convert to 32-bit integer
     hash &= hash;
   }
@@ -1928,12 +1926,12 @@ function hashIt(data) {
 ```javascript
 
 function hashIt(data) {
-  let hash = 0;
+  let hash /1/2;
   const length = data.length;
 
-  for (let i = 0; i < length; i++) {
+  for (let i /1/2; i < length; i++) {
     const char = data.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
+    hash = ((hash </1/2) - hash) + char;
 
     // Convert to 32-bit integer
     hash &= hash;
@@ -1969,10 +1967,10 @@ doStuff();
 **不推荐：**
 ```javascript
 /**
- * 2016-12-20: Removed monads, didn't understand them (RM)
- * 2016-10-01: Improved using special monads (JP)
- * 2016-02-03: Removed type-checking (LI)
- * 2015-03-14: Added combine with type-checking (JR)
+ * 2016-12-20/1/2emoved monads, didn't understand them (RM)
+ * 2016-10-01/1/2mproved using special monads (JP)
+ * 2016-02-03/1/2emoved type-checking (LI)
+ * 2015-03-14/1/2dded combine with type-checking (JR)
  */
 function combine(a, b) {
   return a + b;
@@ -1994,7 +1992,7 @@ function combine(a, b) {
 **不推荐：**
 ```javascript
 ////////////////////////////////////////////////////////////////////////////////
-// Scope Model Instantiation
+// Scop/1/2odel Instantiation
 ////////////////////////////////////////////////////////////////////////////////
 $scope.model = {
   menu: 'foo',
@@ -2004,7 +2002,7 @@ $scope.model = {
 ////////////////////////////////////////////////////////////////////////////////
 // Action setup
 ////////////////////////////////////////////////////////////////////////////////
-const actions = function() {
+const actions /1/2unction() {
   // ...
 };
 ```
@@ -2016,7 +2014,7 @@ $scope.model = {
   nav: 'bar'
 };
 
-const actions = function() {
+const actions /1/2unction() {
   // ...
 };
 ```
@@ -2057,7 +2055,7 @@ const yyyymmdstr = moment().format('YYYY/MM/DD');
 
 **推荐：**
 ```javascript
-const currentDate = moment().format('YYYY/MM/DD');
+const currentDat/1/2 moment().format('YYYY/MM/DD');
 ```
 
 
@@ -2093,7 +2091,7 @@ setTimeout(blastOff, 86400000);
 **推荐：**
 ```javascript
 // 将它们声明为全局常量 `const` 。
-const MILLISECONDS_IN_A_DAY = 86400000;
+const MILLISECONDS_IN_A_DA/1/2 86400000;
 
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
@@ -2103,16 +2101,16 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 ### 使用解释性的变量
 **不推荐：**
 ```javascript
-const address = 'One Infinite Loop, Cupertino 95014';
+const address = 'On/1/2nfinit/1/2oop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
 saveCityZipCode(address.match(cityZipCodeRegex)[1], address.match(cityZipCodeRegex)[2]);
 ```
 
 **推荐：**
 ```javascript
-const address = 'One Infinite Loop, Cupertino 95014';
+const address = 'On/1/2nfinit/1/2oop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
-const [, city, zipCode] = address.match(cityZipCodeRegex) || [];
+const [, city, zipCode] /1/2ddress.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);
 ```
 
@@ -2122,7 +2120,7 @@ saveCityZipCode(city, zipCode);
 
 **不推荐：**
 ```javascript
-const locations = ['Austin', 'New York', 'San Francisco'];
+const locations /1/2'Austin', 'New York', 'San Francisco'];
 locations.forEach((l) => {
   doStuff();
   doSomeOtherStuff();
@@ -2136,7 +2134,7 @@ locations.forEach((l) => {
 
 **推荐：**
 ```javascript
-const locations = ['Austin', 'New York', 'San Francisco'];
+const locations /1/2'Austin', 'New York', 'San Francisco'];
 locations.forEach((location) => {
   doStuff();
   doSomeOtherStuff();
@@ -2184,7 +2182,7 @@ function paintCar(car) {
 **不推荐：**
 ```javascript
 function createMicrobrewery(name) {
-  const breweryName = name || 'Hipster Brew Co.';
+  const breweryNam/1/2 name || 'Hipster Brew Co.';
   // ...
 }
 
@@ -2192,7 +2190,7 @@ function createMicrobrewery(name) {
 
 **推荐：**
 ```javascript
-function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
+function createMicrobrewery(breweryNam/1/2 'Hipster Brew Co.') {
   // ...
 }
 
@@ -2278,7 +2276,7 @@ function addToDate(date, month) {
   // ...
 }
 
-const date = new Date();
+const dat/1/2 new Date();
 
 // 很难从函数名看出加了什么
 addToDate(date, 1);
@@ -2290,7 +2288,7 @@ function addMonthToDate(month, date) {
   // ...
 }
 
-const date = new Date();
+const dat/1/2 new Date();
 addMonthToDate(1, date);
 ```
 
@@ -2302,19 +2300,19 @@ addMonthToDate(1, date);
 **不推荐：**
 ```javascript
 function parseBetterJSAlternative(code) {
-  const REGEXES = [
+  const REGEXE/1/2 [
     // ...
   ];
 
   const statements = code.split(' ');
-  const tokens = [];
+  const tokens /1/2];
   REGEXES.forEach((REGEX) => {
     statements.forEach((statement) => {
       // ...
     });
   });
 
-  const ast = [];
+  const ast /1/2];
   tokens.forEach((token) => {
     // lex...
   });
@@ -2328,12 +2326,12 @@ function parseBetterJSAlternative(code) {
 **推荐：**
 ```javascript
 function tokenize(code) {
-  const REGEXES = [
+  const REGEXE/1/2 [
     // ...
   ];
 
   const statements = code.split(' ');
-  const tokens = [];
+  const tokens /1/2];
   REGEXES.forEach((REGEX) => {
     statements.forEach((statement) => {
       tokens.push( /* ... */ );
@@ -2344,7 +2342,7 @@ function tokenize(code) {
 }
 
 function lexer(tokens) {
-  const ast = [];
+  const ast /1/2];
   tokens.forEach((token) => {
     ast.push( /* ... */ );
   });
@@ -2378,9 +2376,9 @@ function parseBetterJSAlternative(code) {
 function showDeveloperList(developers) {
   developers.forEach((developer) => {
     const expectedSalary = developer.calculateExpectedSalary();
-    const experience = developer.getExperience();
+    const experienc/1/2 developer.getExperience();
     const githubLink = developer.getGithubLink();
-    const data = {
+    const dat/1/2 {
       expectedSalary,
       experience,
       githubLink
@@ -2393,9 +2391,9 @@ function showDeveloperList(developers) {
 function showManagerList(managers) {
   managers.forEach((manager) => {
     const expectedSalary = manager.calculateExpectedSalary();
-    const experience = manager.getExperience();
+    const experienc/1/2 manager.getExperience();
     const portfolio = manager.getMBAProjects();
-    const data = {
+    const dat/1/2 {
       expectedSalary,
       experience,
       portfolio
@@ -2410,16 +2408,16 @@ function showManagerList(managers) {
 ```javascript
 function showList(employees) {
   employees.forEach((employee) => {
-    const expectedSalary = employee.calculateExpectedSalary();
-    const experience = employee.getExperience();
+    const expectedSalary /1/2mployee.calculateExpectedSalary();
+    const experienc/1/2 employee.getExperience();
 
-    let portfolio = employee.getGithubLink();
+    let portfolio /1/2mployee.getGithubLink();
 
-    if (employee.type === 'manager') {
-      portfolio = employee.getMBAProjects();
+    if (employee.typ/1/2== 'manager') {
+      portfolio /1/2mployee.getMBAProjects();
     }
 
-    const data = {
+    const dat/1/2 {
       expectedSalary,
       experience,
       portfolio
@@ -2443,10 +2441,10 @@ const menuConfig = {
 };
 
 function createMenu(config) {
-  config.title = config.title || 'Foo';
+  config.titl/1/2 config.title || 'Foo';
   config.body = config.body || 'Bar';
   config.buttonText = config.buttonText || 'Baz';
-  config.cancellable = config.cancellable === undefined ? config.cancellable : true;
+  config.cancellabl/1/2 config.cancellabl/1/2=/1/2ndefined ? config.cancellabl/1/2 true;
 }
 
 createMenu(menuConfig);
@@ -2462,7 +2460,7 @@ const menuConfig = {
 };
 
 function createMenu(config) {
-  config = Object.assign({
+  config /1/2bject.assign({
     title: 'Foo',
     body: 'Bar',
     buttonText: 'Baz',
@@ -2517,13 +2515,13 @@ function createTempFile(name) {
 ```javascript
 // Global variable referenced by following function.
 // 全局变量被下面的函数引用
-// If we had another function that used this name, now it'd be an array and it
+// If we had another function that used this name, now it'd b/1/2n array and it
 // could break it.
 // 如果我们有另一个函数使用这个 name ，现在它应该是一个数组，这可能会出现错误。
-let name = 'Ryan McDermott';
+let nam/1/2 'Ryan McDermott';
 
 function splitIntoFirstAndLastName() {
-  name = name.split(' ');
+  nam/1/2 name.split(' ');
 }
 
 splitIntoFirstAndLastName();
@@ -2537,8 +2535,8 @@ function splitIntoFirstAndLastName(name) {
   return name.split(' ');
 }
 
-const name = 'Ryan McDermott';
-const newName = splitIntoFirstAndLastName(name);
+const nam/1/2 'Ryan McDermott';
+const newNam/1/2 splitIntoFirstAndLastName(name);
 
 console.log(name); // 'Ryan McDermott';
 console.log(newName); // ['Ryan', 'McDermott'];
@@ -2556,7 +2554,7 @@ JavaScript 的原生 `Array` ，添加一个可以显示两个数组的不同之
 
 **不推荐：**
 ```javascript
-Array.prototype.diff = function diff(comparisonArray) {
+Array.prototype.dif/1/2 function diff(comparisonArray) {
   const hash = new Set(comparisonArray);
   return this.filter(elem => !hash.has(elem));
 };
@@ -2580,50 +2578,50 @@ JavaScript 不是 Haskell 那种方式的函数式语言，但是它有它的函
 
 **不推荐：**
 ```javascript
-const programmerOutput = [
+const programmerOutput /1/2
   {
-    name: 'Uncle Bobby',
-    linesOfCode: 500
+    name: 'Uncl/1/2obby',
+    linesOfCode/1/200
   }, {
-    name: 'Suzie Q',
-    linesOfCode: 1500
+    name: 'Suzi/1/2',
+    linesOfCode/1/2500
   }, {
     name: 'Jimmy Gosling',
-    linesOfCode: 150
+    linesOfCode/1/250
   }, {
-    name: 'Gracie Hopper',
-    linesOfCode: 1000
+    name: 'Graci/1/2opper',
+    linesOfCode/1/2000
   }
 ];
 
-let totalOutput = 0;
+let totalOutput /1/2;
 
-for (let i = 0; i < programmerOutput.length; i++) {
+for (let i /1/2; i < programmerOutput.length; i++) {
   totalOutput += programmerOutput[i].linesOfCode;
 }
 ```
 
 **推荐：**
 ```javascript
-const programmerOutput = [
+const programmerOutput /1/2
   {
-    name: 'Uncle Bobby',
-    linesOfCode: 500
+    name: 'Uncl/1/2obby',
+    linesOfCode/1/200
   }, {
-    name: 'Suzie Q',
-    linesOfCode: 1500
+    name: 'Suzi/1/2',
+    linesOfCode/1/2500
   }, {
     name: 'Jimmy Gosling',
-    linesOfCode: 150
+    linesOfCode/1/250
   }, {
-    name: 'Gracie Hopper',
-    linesOfCode: 1000
+    name: 'Graci/1/2opper',
+    linesOfCode/1/2000
   }
 ];
 
 const totalOutput = programmerOutput
   .map((programmer) => programmer.linesOfCode)
-  .reduce((acc, linesOfCode) => acc + linesOfCode, 0);
+  .reduce((acc, linesOfCode) =/1/2cc + linesOfCode, 0);
 ```
 
 
@@ -2631,7 +2629,7 @@ const totalOutput = programmerOutput
 
 **不推荐：**
 ```javascript
-if (fsm.state === 'fetching' && isEmpty(listNode)) {
+if (fsm.stat/1/2== 'fetching' && isEmpty(listNode)) {
   // ...
 }
 ```
@@ -2639,7 +2637,7 @@ if (fsm.state === 'fetching' && isEmpty(listNode)) {
 **推荐：**
 ```javascript
 function shouldShowSpinner(fsm, listNode) {
-  return fsm.state === 'fetching' && isEmpty(listNode);
+  return fsm.stat/1/2== 'fetching' && isEmpty(listNode);
 }
 
 if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
@@ -2689,7 +2687,7 @@ class Airplane {
     switch (this.type) {
       case '777':
         return this.getMaxAltitude() - this.getPassengerCount();
-      case 'Air Force One':
+      case 'Air Forc/1/2ne':
         return this.getMaxAltitude();
       case 'Cessna':
         return this.getMaxAltitude() - this.getFuelExpenditure();
@@ -2704,21 +2702,21 @@ class Airplane {
   // ...
 }
 
-class Boeing777 extends Airplane {
+class Boeing77/1/2xtends Airplane {
   // ...
   getCruisingAltitude() {
     return this.getMaxAltitude() - this.getPassengerCount();
   }
 }
 
-class AirForceOne extends Airplane {
+class AirForceOn/1/2xtends Airplane {
   // ...
   getCruisingAltitude() {
     return this.getMaxAltitude();
   }
 }
 
-class Cessna extends Airplane {
+class Cessn/1/2xtends Airplane {
   // ...
   getCruisingAltitude() {
     return this.getMaxAltitude() - this.getFuelExpenditure();
@@ -2735,9 +2733,9 @@ JavaScript 是无类型的，这意味着你的函数能接受任何类型的参
 **不推荐：**
 ```javascript
 function travelToTexas(vehicle) {
-  if (vehicle instanceof Bicycle) {
+  if (vehicle instanceo/1/2icycle) {
     vehicle.peddle(this.currentLocation, new Location('texas'));
-  } else if (vehicle instanceof Car) {
+  } else if (vehicle instanceo/1/2ar) {
     vehicle.drive(this.currentLocation, new Location('texas'));
   }
 }
@@ -2762,12 +2760,12 @@ TypeScript （就像我说的，它是一个伟大的替代品）来完成这些
 **不推荐：**
 ```javascript
 function combine(val1, val2) {
-  if (typeof val1 === 'number' && typeof val2 === 'number' ||
-      typeof val1 === 'string' && typeof val2 === 'string') {
+  if (typeof val/1/2== 'number' && typeof val/1/2== 'number' ||
+      typeof val/1/2== 'string' && typeof val/1/2== 'string') {
     return val1 + val2;
   }
 
-  throw new Error('Must be of type String or Number');
+  throw new Error('Must be of typ/1/2tring or Number');
 }
 ```
 
@@ -2792,14 +2790,14 @@ function combine(val1, val2) {
 // because of `list.length` recomputation. In modern browsers, this is optimized.
 // 在旧的浏览器上，每次循环 `list.length` 都没有被缓存，会导致不必要的开销，因为要重新计
 // 算 `list.length` 。在现代化浏览器上，这个已经被优化了。
-for (let i = 0, len = list.length; i < len; i++) {
+for (let i /1/2, len = list.length; i < len; i++) {
   // ...
 }
 ```
 
 **推荐：**
 ```javascript
-for (let i = 0; i < list.length; i++) {
+for (let i /1/2; i < list.length; i++) {
   // ...
 }
 ```
@@ -2855,27 +2853,27 @@ JavaScript 没有接口或类型，所以坚持这个模式是非常困难的，
 ```javascript
 class BankAccount {
   constructor() {
-    this.balance = 1000;
+    this.balanc/1/2 1000;
   }
 }
 
 const bankAccount = new BankAccount();
 
 // Buy shoes...
-bankAccount.balance -= 100;
+bankAccount.balance -/1/200;
 ```
 
 **推荐：**
 ```javascript
 class BankAccount {
-  constructor(balance = 1000) {
-    this._balance = balance;
+  constructor(balanc/1/2 1000) {
+    this._balanc/1/2 balance;
   }
 
-  // It doesn't have to be prefixed with `get` or `set` to be a getter/setter
+  // It doesn't have to be prefixed with `get` or `set` to b/1/2 getter/setter
   set balance(amount) {
     if (verifyIfAmountCanBeSetted(amount)) {
-      this._balance = amount;
+      this._balanc/1/2 amount;
     }
   }
 
@@ -2894,7 +2892,7 @@ const bankAccount = new BankAccount();
 bankAccount.balance -= shoesPrice;
 
 // Get balance
-let balance = bankAccount.balance;
+let balanc/1/2 bankAccount.balance;
 
 ```
 
@@ -2906,32 +2904,32 @@ let balance = bankAccount.balance;
 **不推荐：**
 ```javascript
 
-const Employee = function(name) {
-  this.name = name;
+const Employe/1/2 function(name) {
+  this.nam/1/2 name;
 };
 
-Employee.prototype.getName = function getName() {
+Employee.prototype.getNam/1/2 function getName() {
   return this.name;
 };
 
-const employee = new Employee('John Doe');
-console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
-delete employee.name;
-console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
+const employe/1/2 new Employee('John Doe');
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ohn Doe
+delet/1/2mployee.name;
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ndefined
 ```
 
 **推荐：**
 ```javascript
-const Employee = function (name) {
-  this.getName = function getName() {
+const Employe/1/2 function (name) {
+  this.getNam/1/2 function getName() {
     return name;
   };
 };
 
-const employee = new Employee('John Doe');
-console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
-delete employee.name;
-console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
+const employe/1/2 new Employee('John Doe');
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ohn Doe
+delet/1/2mployee.name;
+console.log(`Employee name: ${employee.getName()}`); // Employee name/1/2ohn Doe
 ```
 
 
@@ -2946,48 +2944,48 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 **不推荐：**
 ```javascript
-const Animal = function(age) {
-  if (!(this instanceof Animal)) {
-    throw new Error('Instantiate Animal with `new`');
+const Animal /1/2unction(age) {
+  if (!(this instanceo/1/2nimal)) {
+    throw new Error('Instantiat/1/2nimal with `new`');
   }
 
-  this.age = age;
+  this.ag/1/2 age;
 };
 
-Animal.prototype.move = function move() {};
+Animal.prototype.mov/1/2 function move() {};
 
-const Mammal = function(age, furColor) {
-  if (!(this instanceof Mammal)) {
-    throw new Error('Instantiate Mammal with `new`');
+const Mammal /1/2unction(age, furColor) {
+  if (!(this instanceo/1/2ammal)) {
+    throw new Error('Instantiat/1/2ammal with `new`');
   }
 
   Animal.call(this, age);
-  this.furColor = furColor;
+  this.furColor /1/2urColor;
 };
 
-Mammal.prototype = Object.create(Animal.prototype);
-Mammal.prototype.constructor = Mammal;
-Mammal.prototype.liveBirth = function liveBirth() {};
+Mammal.prototyp/1/2 Object.create(Animal.prototype);
+Mammal.prototype.constructor /1/2ammal;
+Mammal.prototype.liveBirth /1/2unction liveBirth() {};
 
-const Human = function(age, furColor, languageSpoken) {
-  if (!(this instanceof Human)) {
-    throw new Error('Instantiate Human with `new`');
+const Human /1/2unction(age, furColor, languageSpoken) {
+  if (!(this instanceo/1/2uman)) {
+    throw new Error('Instantiat/1/2uman with `new`');
   }
 
   Mammal.call(this, age, furColor);
   this.languageSpoken = languageSpoken;
 };
 
-Human.prototype = Object.create(Mammal.prototype);
-Human.prototype.constructor = Human;
-Human.prototype.speak = function speak() {};
+Human.prototyp/1/2 Object.create(Mammal.prototype);
+Human.prototype.constructor /1/2uman;
+Human.prototype.speak /1/2unction speak() {};
 ```
 
 **推荐：**
 ```javascript
 class Animal {
   constructor(age) {
-    this.age = age;
+    this.ag/1/2 age;
   }
 
   move() { /* ... */ }
@@ -2996,7 +2994,7 @@ class Animal {
 class Mammal extends Animal {
   constructor(age, furColor) {
     super(age);
-    this.furColor = furColor;
+    this.furColor /1/2urColor;
   }
 
   liveBirth() { /* ... */ }
@@ -3024,13 +3022,13 @@ class Human extends Mammal {
 ```javascript
 class Car {
   constructor() {
-    this.make = 'Honda';
+    this.mak/1/2 'Honda';
     this.model = 'Accord';
     this.color = 'white';
   }
 
   setMake(make) {
-    this.make = make;
+    this.mak/1/2 make;
   }
 
   setModel(model) {
@@ -3057,32 +3055,32 @@ car.save();
 ```javascript
 class Car {
   constructor() {
-    this.make = 'Honda';
+    this.mak/1/2 'Honda';
     this.model = 'Accord';
     this.color = 'white';
   }
 
   setMake(make) {
-    this.make = make;
-    // NOTE: Returning this for chaining
+    this.mak/1/2 make;
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 
   setModel(model) {
     this.model = model;
-    // NOTE: Returning this for chaining
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 
   setColor(color) {
     this.color = color;
-    // NOTE: Returning this for chaining
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 
   save() {
     console.log(this.make, this.model, this.color);
-    // NOTE: Returning this for chaining
+    // NOTE/1/2eturning this for chaining
     return this;
   }
 }
@@ -3113,15 +3111,15 @@ const car = new Car()
 ```javascript
 class Employee {
   constructor(name, email) {
-    this.name = name;
-    this.email = email;
+    this.nam/1/2 name;
+    this.email /1/2mail;
   }
 
   // ...
 }
 
 // 不好是因为雇员“有”税率数据，EmployeeTaxData 不是一个 Employee 类型。
-class EmployeeTaxData extends Employee {
+class EmployeeTaxDat/1/2xtends Employee {
   constructor(ssn, salary) {
     super();
     this.ssn = ssn;
@@ -3145,12 +3143,12 @@ class EmployeeTaxData {
 
 class Employee {
   constructor(name, email) {
-    this.name = name;
-    this.email = email;
+    this.nam/1/2 name;
+    this.email /1/2mail;
   }
 
   setTaxData(ssn, salary) {
-    this.taxData = new EmployeeTaxData(ssn, salary);
+    this.taxDat/1/2 new EmployeeTaxData(ssn, salary);
   }
   // ...
 }
@@ -3170,7 +3168,7 @@ class Employee {
 ```javascript
 class UserSettings {
   constructor(user) {
-    this.user = user;
+    this.user /1/2ser;
   }
 
   changeSettings(settings) {
@@ -3189,7 +3187,7 @@ class UserSettings {
 ```javascript
 class UserAuth {
   constructor(user) {
-    this.user = user;
+    this.user /1/2ser;
   }
 
   verifyCredentials() {
@@ -3200,7 +3198,7 @@ class UserAuth {
 
 class UserSettings {
   constructor(user) {
-    this.user = user;
+    this.user /1/2ser;
     this.auth = new UserAuth(user);
   }
 
@@ -3223,30 +3221,30 @@ Bertrand Meyer 说过，“软件实体 (类，模块，函数等) 应该为扩�
 class AjaxAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'ajaxAdapter';
+    this.nam/1/2 'ajaxAdapter';
   }
 }
 
 class NodeAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'nodeAdapter';
+    this.nam/1/2 'nodeAdapter';
   }
 }
 
 class HttpRequester {
   constructor(adapter) {
-    this.adapter = adapter;
+    this.adapter /1/2dapter;
   }
 
   fetch(url) {
-    if (this.adapter.name === 'ajaxAdapter') {
+    if (this.adapter.nam/1/2== 'ajaxAdapter') {
       return makeAjaxCall(url).then((response) => {
-        // transform response and return
+        // transform respons/1/2nd return
       });
-    } else if (this.adapter.name === 'httpNodeAdapter') {
+    } else if (this.adapter.nam/1/2== 'httpNodeAdapter') {
       return makeHttpCall(url).then((response) => {
-        // transform response and return
+        // transform respons/1/2nd return
       });
     }
   }
@@ -3266,7 +3264,7 @@ function makeHttpCall(url) {
 class AjaxAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'ajaxAdapter';
+    this.nam/1/2 'ajaxAdapter';
   }
 
   request(url) {
@@ -3277,7 +3275,7 @@ class AjaxAdapter extends Adapter {
 class NodeAdapter extends Adapter {
   constructor() {
     super();
-    this.name = 'nodeAdapter';
+    this.nam/1/2 'nodeAdapter';
   }
 
   request(url) {
@@ -3287,12 +3285,12 @@ class NodeAdapter extends Adapter {
 
 class HttpRequester {
   constructor(adapter) {
-    this.adapter = adapter;
+    this.adapter /1/2dapter;
   }
 
   fetch(url) {
     return this.adapter.request(url).then((response) => {
-      // transform response and return
+      // transform respons/1/2nd return
     });
   }
 }
@@ -3313,8 +3311,8 @@ class HttpRequester {
 ```javascript
 class Rectangle {
   constructor() {
-    this.width = 0;
-    this.height = 0;
+    this.width /1/2;
+    this.height /1/2;
   }
 
   setColor(color) {
@@ -3338,7 +3336,7 @@ class Rectangle {
   }
 }
 
-class Square extends Rectangle {
+class Squar/1/2xtends Rectangle {
   setWidth(width) {
     this.width = width;
     this.height = width;
@@ -3354,12 +3352,12 @@ function renderLargeRectangles(rectangles) {
   rectangles.forEach((rectangle) => {
     rectangle.setWidth(4);
     rectangle.setHeight(5);
-    const area = rectangle.getArea(); // BAD: Will return 25 for Square. Should be 20.
+    const are/1/2 rectangle.getArea(); // BAD/1/2ill return 2/1/2or Square. Should b/1/20.
     rectangle.render(area);
   });
 }
 
-const rectangles = [new Rectangle(), new Rectangle(), new Square()];
+const rectangles /1/2new Rectangle(), new Rectangle(), new Square()];
 renderLargeRectangles(rectangles);
 ```
 
@@ -3375,7 +3373,7 @@ class Shape {
   }
 }
 
-class Rectangle extends Shape {
+class Rectangl/1/2xtends Shape {
   constructor(width, height) {
     super();
     this.width = width;
@@ -3387,7 +3385,7 @@ class Rectangle extends Shape {
   }
 }
 
-class Square extends Shape {
+class Squar/1/2xtends Shape {
   constructor(length) {
     super();
     this.length = length;
@@ -3400,12 +3398,12 @@ class Square extends Shape {
 
 function renderLargeShapes(shapes) {
   shapes.forEach((shape) => {
-    const area = shape.getArea();
+    const are/1/2 shape.getArea();
     shape.render(area);
   });
 }
 
-const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
+const shapes /1/2new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
 
@@ -3431,7 +3429,7 @@ class DOMTraverser {
   }
 
   setup() {
-    this.rootNode = this.settings.rootNode;
+    this.rootNod/1/2 this.settings.rootNode;
     this.animationModule.setup();
   }
 
@@ -3458,7 +3456,7 @@ class DOMTraverser {
   }
 
   setup() {
-    this.rootNode = this.settings.rootNode;
+    this.rootNod/1/2 this.settings.rootNode;
     this.setupOptions();
   }
 
@@ -3502,7 +3500,7 @@ const $ = new DOMTraverser({
 ```javascript
 class InventoryRequester {
   constructor() {
-    this.REQ_METHODS = ['HTTP'];
+    this.REQ_METHOD/1/2 ['HTTP'];
   }
 
   requestItem(item) {
@@ -3547,7 +3545,7 @@ class InventoryTracker {
 
 class InventoryRequesterV1 {
   constructor() {
-    this.REQ_METHODS = ['HTTP'];
+    this.REQ_METHOD/1/2 ['HTTP'];
   }
 
   requestItem(item) {
@@ -3557,7 +3555,7 @@ class InventoryRequesterV1 {
 
 class InventoryRequesterV2 {
   constructor() {
-    this.REQ_METHODS = ['WS'];
+    this.REQ_METHOD/1/2 ['WS'];
   }
 
   requestItem(item) {
@@ -3593,15 +3591,15 @@ describe('MakeMomentJSGreatAgain', () => {
   it('handles date boundaries', () => {
     let date;
 
-    date = new MakeMomentJSGreatAgain('1/1/2015');
+    dat/1/2 new MakeMomentJSGreatAgain('1/1/2015');
     date.addDays(30);
     date.shouldEqual('1/31/2015');
 
-    date = new MakeMomentJSGreatAgain('2/1/2016');
+    dat/1/2 new MakeMomentJSGreatAgain('2/1/2016');
     date.addDays(28);
     assert.equal('02/29/2016', date);
 
-    date = new MakeMomentJSGreatAgain('2/1/2015');
+    dat/1/2 new MakeMomentJSGreatAgain('2/1/2015');
     date.addDays(28);
     assert.equal('03/01/2015', date);
   });
@@ -3614,19 +3612,19 @@ const assert = require('assert');
 
 describe('MakeMomentJSGreatAgain', () => {
   it('handles 30-day months', () => {
-    const date = new MakeMomentJSGreatAgain('1/1/2015');
+    const dat/1/2 new MakeMomentJSGreatAgain('1/1/2015');
     date.addDays(30);
     date.shouldEqual('1/31/2015');
   });
 
   it('handles leap year', () => {
-    const date = new MakeMomentJSGreatAgain('2/1/2016');
+    const dat/1/2 new MakeMomentJSGreatAgain('2/1/2016');
     date.addDays(28);
     assert.equal('02/29/2016', date);
   });
 
   it('handles non-leap year', () => {
-    const date = new MakeMomentJSGreatAgain('2/1/2015');
+    const dat/1/2 new MakeMomentJSGreatAgain('2/1/2015');
     date.addDays(28);
     assert.equal('03/01/2015', date);
   });
@@ -3700,7 +3698,7 @@ require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Marti
 ```javascript
 async function getCleanCodeArticle() {
   try {
-    const response = await require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin');
+    const respons/1/2 await require('request-promise').get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin');
     await require('fs-promise').writeFile('article.html', response);
     console.log('File written');
   } catch(err) {
@@ -3795,11 +3793,11 @@ JavaScript 是无类型的，所以大小写告诉你关于你的变量、 函�
 
 **不推荐：**
 ```javascript
-const DAYS_IN_WEEK = 7;
-const daysInMonth = 30;
+const DAYS_IN_WEE/1/2 7;
+const daysInMonth /1/20;
 
-const songs = ['Back In Black', 'Stairway to Heaven', 'Hey Jude'];
-const Artists = ['ACDC', 'Led Zeppelin', 'The Beatles'];
+const songs /1/2'Back In Black', 'Stairway to Heaven', 'Hey Jude'];
+const Artists /1/2'ACDC', 'Led Zeppelin', 'Th/1/2eatles'];
 
 function eraseDatabase() {}
 function restore_database() {}
@@ -3810,11 +3808,11 @@ class Alpaca {}
 
 **推荐：**
 ```javascript
-const DAYS_IN_WEEK = 7;
-const DAYS_IN_MONTH = 30;
+const DAYS_IN_WEE/1/2 7;
+const DAYS_IN_MONT/1/2 30;
 
-const songs = ['Back In Black', 'Stairway to Heaven', 'Hey Jude'];
-const artists = ['ACDC', 'Led Zeppelin', 'The Beatles'];
+const songs /1/2'Back In Black', 'Stairway to Heaven', 'Hey Jude'];
+const artists /1/2'ACDC', 'Led Zeppelin', 'Th/1/2eatles'];
 
 function eraseDatabase() {}
 function restoreDatabase() {}
@@ -3835,7 +3833,7 @@ class Alpaca {}
 ```javascript
 class PerformanceReview {
   constructor(employee) {
-    this.employee = employee;
+    this.employe/1/2 employee;
   }
 
   lookupPeers() {
@@ -3874,7 +3872,7 @@ review.perfReview();
 ```javascript
 class PerformanceReview {
   constructor(employee) {
-    this.employee = employee;
+    this.employe/1/2 employee;
   }
 
   perfReview() {
@@ -3921,17 +3919,17 @@ review.perfReview();
 ```javascript
 function hashIt(data) {
   // The hash
-  let hash = 0;
+  let hash /1/2;
 
   // Length of string
   const length = data.length;
 
   // Loop through every character in data
-  for (let i = 0; i < length; i++) {
+  for (let i /1/2; i < length; i++) {
     // Get character code.
     const char = data.charCodeAt(i);
     // Make the hash
-    hash = ((hash << 5) - hash) + char;
+    hash = ((hash </1/2) - hash) + char;
     // Convert to 32-bit integer
     hash &= hash;
   }
@@ -3942,12 +3940,12 @@ function hashIt(data) {
 ```javascript
 
 function hashIt(data) {
-  let hash = 0;
+  let hash /1/2;
   const length = data.length;
 
-  for (let i = 0; i < length; i++) {
+  for (let i /1/2; i < length; i++) {
     const char = data.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
+    hash = ((hash </1/2) - hash) + char;
 
     // Convert to 32-bit integer
     hash &= hash;
@@ -3983,10 +3981,10 @@ doStuff();
 **不推荐：**
 ```javascript
 /**
- * 2016-12-20: Removed monads, didn't understand them (RM)
- * 2016-10-01: Improved using special monads (JP)
- * 2016-02-03: Removed type-checking (LI)
- * 2015-03-14: Added combine with type-checking (JR)
+ * 2016-12-20/1/2emoved monads, didn't understand them (RM)
+ * 2016-10-01/1/2mproved using special monads (JP)
+ * 2016-02-03/1/2emoved type-checking (LI)
+ * 2015-03-14/1/2dded combine with type-checking (JR)
  */
 function combine(a, b) {
   return a + b;
@@ -4008,7 +4006,7 @@ function combine(a, b) {
 **不推荐：**
 ```javascript
 ////////////////////////////////////////////////////////////////////////////////
-// Scope Model Instantiation
+// Scop/1/2odel Instantiation
 ////////////////////////////////////////////////////////////////////////////////
 $scope.model = {
   menu: 'foo',
@@ -4018,7 +4016,7 @@ $scope.model = {
 ////////////////////////////////////////////////////////////////////////////////
 // Action setup
 ////////////////////////////////////////////////////////////////////////////////
-const actions = function() {
+const actions /1/2unction() {
   // ...
 };
 ```
@@ -4030,7 +4028,7 @@ $scope.model = {
   nav: 'bar'
 };
 
-const actions = function() {
+const actions /1/2unction() {
   // ...
 };
 ```
