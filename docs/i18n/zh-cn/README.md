@@ -1,6 +1,6 @@
 ## 代码整洁的 JavaScript <!-- {docsify-ignore} -->
 
-> 作者：[@ryanmcdermott](https://github.com/ryanmcdermott/clean-code-javascript) | 译者：[@beginor](https://github.com/beginor/clean-code-javascript)
+> 作者：[@ryanmcdermott](https://github.com/ryanmcdermott/clean-code-javascript) | 译者：[@beginor](https://github.com/beginor/clean-code-javascript) | 编辑：[@kristy-hu](https://github.com/kristy-hu)
 
 ## 简介
 
